@@ -1,3 +1,4 @@
+import 'package:fahsion/product_details.dart';
 import 'package:flutter/material.dart';
 
 import 'main.dart';
@@ -9,28 +10,33 @@ class ProductWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(5),
-      child: Column(
-        children: <Widget>[
-          buildImage(),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            product.name.toUpperCase(),
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            '${product.price} \$',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 5,),
+    return InkWell(
+      onTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ProductDetails(product)));
+      },
+      child: Container(
+        margin: EdgeInsets.all(5),
+        child: Column(
+          children: <Widget>[
+            buildImage(),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              product.name.toUpperCase(),
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.grey),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              '${product.price} \$',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 5,),
 
-        ],
+          ],
+        ),
       ),
     );
   }
