@@ -1,4 +1,4 @@
-# fahsion
+# Flutter Fahsion app
 
 A new Flutter application.
 
