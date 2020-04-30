@@ -5,8 +5,8 @@ import 'main.dart';
 
 class ProductWidget extends StatelessWidget {
   Product product;
-
-  ProductWidget(this.product);
+  bool showBuyNow =false;
+  ProductWidget(this.product,{this.showBuyNow=false});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +34,8 @@ class ProductWidget extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 5,),
+            showBuyNow?Text('BUY NOW',style: TextStyle(fontWeight: FontWeight.bold,color: mOrage),):
+                Container()
 
           ],
         ),

@@ -220,6 +220,7 @@ class _ProductDetailsState extends State<ProductDetails> with SingleTickerProvid
   }
 
   Widget buildCartAndFave() {
+
     return Positioned(
       bottom: 0,
       right: 0,

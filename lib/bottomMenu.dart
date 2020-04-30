@@ -1,3 +1,4 @@
+import 'package:fahsion/men_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'main.dart';
@@ -16,6 +17,11 @@ class _BottomMenuState extends State<BottomMenu>
   void initState() {
     controller =
         AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+    controller.addStatusListener((status){
+      if(status==AnimationStatus.completed){
+        showBottomSheet(backgroundColor: Colors.transparent,context: context, builder: (context)=>MenWidget());
+      }
+    });
 
     animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
     super.initState();
